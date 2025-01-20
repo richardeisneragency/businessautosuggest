@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://businessautosuggest.com/sitemap.xml
