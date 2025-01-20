@@ -93,5 +93,28 @@
 
     <script src="/js/search-demo.js"></script>
     <script src="/js/lsa-demo.js"></script>
+    <script>
+        // Initialize search demo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize autosuggest demo
+            const searchDemo = new TopSearchDemo({
+                inputId: 'search-input',
+                suggestionsId: 'suggestions',
+                continuous: true,
+                highlightLoop: true
+            });
+
+            searchDemo.addDemo('plumber near', 'plumber near me');
+            searchDemo.addDemo('emergency plumb', 'emergency plumber 24/7');
+            searchDemo.addDemo('best plumbing serv', 'best plumbing services');
+            searchDemo.start();
+
+            // Initialize LSA demo
+            const lsaDemo = new LSADemo({
+                containerId: 'lsa-demo'
+            });
+            lsaDemo.start();
+        });
+    </script>
 </body>
 </html>
