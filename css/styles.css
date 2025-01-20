@@ -300,14 +300,14 @@ body {
 }
 
 .suggestion-item.highlight {
-    background-color: #e8f0fe;
+    background-color: #ffd700;
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% { background-color: #e8f0fe; }
-    50% { background-color: #f8f9fa; }
-    100% { background-color: #e8f0fe; }
+    0% { background-color: #ffd700; }
+    50% { background-color: #fff7cc; }
+    100% { background-color: #ffd700; }
 }
 
 /* LSA Demo Styles */
