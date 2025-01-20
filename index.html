@@ -97,21 +97,29 @@
         // Initialize search demo
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize autosuggest demo
-            const searchDemo = new TopSearchDemo({
+            const mainDemo = new TopSearchDemo({
                 inputId: 'search-input',
                 suggestionsId: 'suggestions',
                 continuous: true,
                 highlightLoop: true
             });
 
-            // Add company-specific search demos
-            searchDemo.addDemo('roto rooter', 'roto rooter plumbing near me');
-            searchDemo.addDemo('mr rooter', 'mr rooter 24 hour emergency service');
-            searchDemo.addDemo('benjamin frankl', 'benjamin franklin plumbing reviews');
-            searchDemo.addDemo('home depot plum', 'home depot plumbing services');
-            searchDemo.addDemo('mikes plumbing', 'mikes plumbing and heating');
-            searchDemo.addDemo('angi plumb', 'angi plumbing contractors');
-            searchDemo.start();
+            // Add real business examples
+            const demoKeywords = [
+                ["chimney sweep pottstown pa", "chimney sweep pottstown pa wells & sons"],
+                ["commercial solar orange county", "commercial solar orange county rep solar"],
+                ["dentistry for children scottsdale", "dentistry for children scottsdale palm valley pediatrics"],
+                ["rehab loveland co", "rehab loveland co new life recovery"],
+                ["divorce lawyer orlando fl", "divorce lawyer orlando fl caplan & associates"]
+            ];
+
+            // Add all demo keywords
+            demoKeywords.forEach(([keyword, target]) => {
+                mainDemo.addDemo(keyword, target);
+            });
+
+            // Start the demo
+            mainDemo.start();
 
             // Initialize LSA demo
             const lsaDemo = new LSADemo({
